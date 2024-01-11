@@ -5,14 +5,18 @@
   let isFirst = first;
   let isLast = last;
   let isEven = even;"
-  class="list-group-item"
+  class="list-group-item d-flex justify-content-between align-items-center"
 
   [ngClass]="{
-    'list-group-item-light': isEven,
+    'list-group-item-primary': isEven,
     'list-group-item-dark': isLast,
   }">
+  <div>
     <span class="text-primary">
-    {{i + 1}}.- </span>
-    {{character.name}} - Power: {{character.power}}
+      {{i + 1}}.- </span>
+      {{character.name}} - Power: {{character.power}}
+  </div>
+
+    <button class="btn btn-danger" (click)="onDeleteCharacter(i)">X</button>
   </li>
 </ul>

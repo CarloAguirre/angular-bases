@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { Character } from '../interfaces/character.interface';
 
 @Component({
@@ -7,6 +7,8 @@ import { Character } from '../interfaces/character.interface';
 })
 
 export class MainDBZComponent {
+
+
   public characters: Character[] = [
     {
       name: "Krillin",
@@ -21,4 +23,13 @@ export class MainDBZComponent {
       power: 9500
     }
   ];
+
+  onNewCharacter(character: Character):void {
+    this.characters.push(character);
+  }
+
+ onDeleteCharacter(index: number){
+    this.characters.splice(index, 1)
+  }
+
 }
